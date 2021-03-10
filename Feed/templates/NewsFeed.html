@@ -3,24 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>News Feed</title>
-
+    <!--<link rel="stylesheet" href="feed.css">-->
+    <style>
+    .post{
+    width:50%;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px
+  }
+  
+  .post_image{
+      width:30%;
+      float:left;
+      padding-right:10px;
+      border-radius:15px;
+  }
+  
+  .post_text{
+      padding:2px;
+  }
+    </style>
 </head>
 <body>
 
 <div class="jumbotron" style="color:black">
-<h1>NEWSFEED</h1>
 </div>
 
-<div class="container">
+<!--<div class="container">-->
 
-{% for new, des, i in context %}\
-
-<img src="{{i}}" alt="image not found">
-<h3>News: </h3> {{new}}
-<h4>Description: </h4>{{des}}
+{% for news, desc, img, link in context %}
+<div class="post">
+<p>
+<a href ="{{link}}"><img src="{{img}}" alt="image not found" class="post_image"></a> 
+<a href ="{{link}}"><h3 class="post_text">{{news}}</h3></a>
+<h5 class="post_text">{{desc}}</h4>
+</p>
+</div>
 
 {% endfor %}
-</div>
+<!--</div>-->
 
-</body>
+</body> 
 </html>
