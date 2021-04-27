@@ -1,14 +1,11 @@
 import requests
-#url = ('https://newsapi.org/v2/top-headlines?''country=us&''apiKey=57c0fcb51bc74ebbb71643ef42293cdd')
-#response = requests.get(url)
+import sys
+import json
 
-#data = response.json()
+url = ('https://newsapi.org/v2/top-headlines?''country=in&''apiKey=57c0fcb51bc74ebbb71643ef42293cdd')
+response = requests.get(url)
+data = response.json()
 
-resp = {
-    "Response":200,
-    "Message":"Hello from python file",
-    #"Data":data
-}
 
-print(json.dumps(resp))
+print(json.dumps(data))
 sys.stdout.flush()
